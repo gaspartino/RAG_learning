@@ -1,8 +1,7 @@
 import faiss
 import numpy as np
 from pypdf import PdfReader
-from sentence_transformers import SentenceTransformer
-
+from model import get_model
 
 def extract_text(pdf_path):
     reader = PdfReader(pdf_path)
@@ -36,7 +35,7 @@ def create_chunks(text, chunk_size=1000, overlap=200):
 
 
 def create_embeddings(pdf_path, chunk_size=1000, overlap=200):
-    model = SentenceTransformer("all-MiniLM-L6-v2")
+    model = get_model("embedding")
 
     text = extract_text(pdf_path)
 
