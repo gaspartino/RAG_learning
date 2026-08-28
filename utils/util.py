@@ -34,9 +34,7 @@ def create_chunks(text, chunk_size=1000, overlap=200):
     return chunks
 
 
-def create_embeddings(pdf_path, chunk_size=1000, overlap=200):
-    model = get_model("embedding")
-
+def create_embeddings(model, pdf_path, chunk_size=1000, overlap=200):
     text = extract_text(pdf_path)
 
     chunks = create_chunks(
