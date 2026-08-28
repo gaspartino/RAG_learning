@@ -23,3 +23,15 @@ def create_embedding_model():
     return SentenceTransformer(
         "all-MiniLM-L6-v2"
     )
+
+
+def generate_response(llm, prompt, max_new_tokens=500):
+    response = llm(
+        prompt,
+        max_new_tokens=max_new_tokens,
+        do_sample=False
+    )
+
+    generated_text = response[0]["generated_text"]
+
+    return generated_text
