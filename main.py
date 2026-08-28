@@ -1,9 +1,9 @@
-from model import (
+from utils.model import (
     get_model,
     generate_response
 )
 
-from utils import (
+from utils.util import (
     create_embeddings,
     create_faiss_index,
     search_faiss,
