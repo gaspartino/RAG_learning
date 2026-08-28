@@ -1,7 +1,6 @@
 import faiss
 import numpy as np
 from pypdf import PdfReader
-from model import get_model
 
 def extract_text(pdf_path):
     reader = PdfReader(pdf_path)
